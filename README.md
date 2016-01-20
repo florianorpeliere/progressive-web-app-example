@@ -1,2 +1,2 @@
 # progressive-web-app-example
-An example of progressive web app
+An example of progressive Web App
