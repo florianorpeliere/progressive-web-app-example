@@ -1,0 +1,14 @@
+{
+  "short_name": "Progressive Web App",
+  "name": "Just an example",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/dist/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
