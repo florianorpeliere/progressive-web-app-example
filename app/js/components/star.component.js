@@ -5,11 +5,20 @@ export default function MilkyWay(){
             selector: 'star',
             inputs: ['star'],
             template: `
-            <h1>
-               <a href="{{star.html_url}}">{{ star.name }}</a>
-            </h1>
-            <div>{{ star.description }}</div>`
+            <div class="col xs12 s6 m4">
+               <div class="card {{color}} darken-1">
+                  <div class="card-content white-text">
+                     <span class="card-title"><a href="{{star.html_url}}">{{ star.name }}</a></span>
+                     <p>{{ star.description }}</p>
+                  </div>
+                  <div class="card-action">
+                     <a href="#">This is a link</a>
+                  </div>
+               </div>
+            </div>`
          }).Class({
-            constructor() {}
+            constructor() {
+               this.color = 'blue-grey';
+            }
          });
 }

@@ -13,7 +13,7 @@ import buffer from 'vinyl-buffer';
 browserSync.create();
 
 const scripts = './app/js/**/*.js';
-const styles = './app/css/**/*.css';
+const styles = './app/css/main.scss';
 const templates = './app/html';
 
 
@@ -49,7 +49,7 @@ gulp.task('styles', () => {
  return gulp.src(styles)
   .pipe(sass())
   .pipe(autoprefixer())
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('dist/css'))
   .pipe(browserSync.stream());
 });
 

@@ -8,7 +8,9 @@ export default function MilkyWay(){
             selector: 'milky-way',
             template: `
             <h1>Welcome Florian</h1>
-            <star *ngFor="#star of githubStars" [star]="star"></star>
+            <div class="row">
+               <star *ngFor="#star of githubStars" [star]="star"></star>
+            </div>
             `,
             directives: [Star()],
             bindings: [GithubService],
