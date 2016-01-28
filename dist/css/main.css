@@ -1,5 +1,10 @@
 .card {
   height: 250px; }
+  .card a {
+    color: #0A222D; }
+  .card .material-icons {
+    width: 35px;
+    vertical-align: bottom; }
 
 .card-content {
   height: 180px; }
