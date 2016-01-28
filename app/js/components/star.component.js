@@ -5,20 +5,29 @@ export default function MilkyWay(){
             selector: 'star',
             inputs: ['star'],
             template: `
-            <div class="col xs12 s6 m4">
-               <div class="card {{color}} darken-1">
+            <div class="col s12 m6 l4">
+               <div class="card {{getColor(star.language)}} darken-1">
                   <div class="card-content white-text">
                      <span class="card-title"><a href="{{star.html_url}}">{{ star.name }}</a></span>
                      <p>{{ star.description }}</p>
                   </div>
                   <div class="card-action">
-                     <a href="#">This is a link</a>
+                     <i class="small material-icons">star_rate</i>
+                     <span class="card-stars">{{star.stargazers_count}}</span>
                   </div>
                </div>
             </div>`
          }).Class({
             constructor() {
-               this.color = 'blue-grey';
+               this.getColor = function(color){
+                  switch(color) {
+                     case 'JavaScript': return 'yellow';
+                     case 'HTML': return 'red';
+                     case 'C': return 'green';
+                     case 'CSS': return 'blue';
+                     default: return 'blue-grey';
+                  }
+               };
             }
          });
 }

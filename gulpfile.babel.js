@@ -37,6 +37,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('scripts', () => {
+   gulp.src('app/sw/*.js')
+      .pipe(gulp.dest('dist/sw'));
+
    return browserify('app/js/boot.js', {debug: true})
             .transform('babelify', {presets: ['es2015']})
             .bundle()
@@ -46,11 +49,17 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('styles', () => {
- return gulp.src(styles)
-  .pipe(sass())
-  .pipe(autoprefixer())
-  .pipe(gulp.dest('dist/css'))
-  .pipe(browserSync.stream());
+   gulp.src('node_modules/materialize-css/font/roboto/*.*')
+      .pipe(gulp.dest('dist/font/roboto'));
+
+   gulp.src('node_modules/materialize-css/font/material-design-icons/*.*')
+      .pipe(gulp.dest('dist/font/material-design-icons'));
+
+   return gulp.src(styles)
+      .pipe(sass())
+      .pipe(autoprefixer())
+      .pipe(gulp.dest('dist/css'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task('reload', () => {

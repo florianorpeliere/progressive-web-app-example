@@ -7,7 +7,7 @@ export default function MilkyWay(){
    return Component({
             selector: 'milky-way',
             template: `
-            <h1>Welcome Florian</h1>
+            <h1>Your GitHub stars</h1>
             <div class="row">
                <star *ngFor="#star of githubStars" [star]="star"></star>
             </div>
