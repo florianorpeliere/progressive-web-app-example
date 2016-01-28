@@ -6,7 +6,6 @@ export default function AppComponent(){
    return Component({
             selector: 'my-app',
             template: `
-            <h1>Milky Way</h1>
             <milky-way></milky-way>
             `,
             directives: [MilkyWay()]
